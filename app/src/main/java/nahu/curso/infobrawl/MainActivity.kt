@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.ui.Modifier
 import nahu.curso.infobrawl.ui.screens.main.MainScreen
 import nahu.curso.infobrawl.ui.theme.InfoBrawlTheme
 
@@ -14,8 +17,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent { //lo que está dentro del set content sale dentro de la pantalla
             MaterialTheme {
+                Scaffold( modifier = Modifier.fillMaxSize() ) {  innerPadding ->
+                    MainScreen()
 
-                MainScreen()
+                }
 
             }
         }
