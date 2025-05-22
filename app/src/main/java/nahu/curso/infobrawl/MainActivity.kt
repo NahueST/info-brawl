@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import nahu.curso.infobrawl.ui.screens.historial.HistorialScreen
 import nahu.curso.infobrawl.ui.screens.main.MainScreen
 import nahu.curso.infobrawl.ui.theme.InfoBrawlTheme
 
@@ -19,7 +20,7 @@ class MainActivity : ComponentActivity() {
             MaterialTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) {  innerPadding ->
                     MainScreen()
-
+                    HistorialScreen()
                 }
 
             }

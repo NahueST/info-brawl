@@ -8,11 +8,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import nahu.curso.infobrawl.ui.commons.Card
 import nahu.curso.infobrawl.ui.screens.main.CardGrafica
 
+
 @Composable
-fun MainScreen(modifier: Modifier = Modifier) {
+fun MainScreen(modifier: Modifier = Modifier, navController: NavHostController) {
 
     Column {
         Row {
