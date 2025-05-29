@@ -10,12 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import nahu.curso.infobrawl.ui.commons.Card
-import nahu.curso.infobrawl.ui.screens.main.CardGrafica
+import nahu.curso.infobrawl.ui.screens.Screens
 
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier, navController: NavHostController) {
-
     Column {
         Row {
             Card(titulo = "Copas", puntos = "45000")

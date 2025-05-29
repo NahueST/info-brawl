@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import nahu.curso.infobrawl.ui.screens.historial.HistorialScreen
+import nahu.curso.infobrawl.ui.screens.main.MainScreen
 
 @Composable
 fun NavigationStack() {
@@ -11,20 +13,20 @@ fun NavigationStack() {
 
     NavHost(
         navController = navController,
-        startDestination = Screens.Splash.route
+        startDestination = Screens.MainScreen.route
     )  {
-        composable(route = Screens.Splash.route) {
-            SplashScreen(navController = navController)
+        composable(route = Screens.MainScreen.route) {
+            MainScreen(navController = navController)
         }
-        composable(route = Screens.AnimeList.route) {
-            AnimeListScreen(navController = navController)
+        composable(route = Screens.HistorialScreen.route) {
+            HistorialScreen(navController = navController)
         }
-        composable(route = Screens.AnimeDetail.route + "/{animeId}") { it ->
-            var id = it.arguments?.getString("animeId")
-            val animeId = id?.toIntOrNull()
-            AnimeDetailScreen(animeId ?: 0)
-        }
+//        composable(route = Screens.AnimeDetail.route + "/{animeId}") { it ->
+//            var id = it.arguments?.getString("animeId")
+//            val animeId = id?.toIntOrNull()
+//            AnimeDetailScreen(animeId ?: 0)
+//        }
 
+        }
     }
 
-}
