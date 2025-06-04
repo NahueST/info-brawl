@@ -28,7 +28,6 @@ class AuthInterceptor: Interceptor {
         val request = chain.request().newBuilder()
             .addHeader(
                 "Authorization",
-                "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImI4MmRhOWNjLTYzMDAtNDc4MS1hOGI4LTQ4NDlmY2Y5OTE2NCIsImlhdCI6MTc0Njg0Mzc0OSwic3ViIjoiZGV2ZWxvcGVyL2MwZjdlNzdjLTQ3YjgtNDVkNi0yNTljLTc0NGVlNmZhNTE1MyIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiMjAxLjIxOS43My40OCJdLCJ0eXBlIjoiY2xpZW50In1dfQ.LFOq3J4Q8qEjjIPeMpdxZxxC1zrWNTfiT0p6XWx0RSFtZR2JaO2rGC0eKgBJEu6OjPMawajZs0T-DPC7XFgLiw"
             )
             .build()
         return chain.proceed(request)
