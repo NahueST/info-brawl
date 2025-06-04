@@ -1,4 +1,4 @@
-package nahu.curso.infobrawl.ui.screens.main
+package nahu.curso.infobrawl.ui.commons
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.border

@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun FilterChip(botones: List<String>) {
+fun Chips(botones: List<String>) {
     var seleccionados by remember { mutableStateOf(setOf<String>()) }
 
     Row {
