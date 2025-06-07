@@ -1,8 +1,12 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
+
+val apiKey: String = gradleLocalProperties(rootDir, providers).getProperty("apiKey")
 
 android {
     namespace = "nahu.curso.infobrawl"
@@ -16,6 +20,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String",
+                "apiKey",
+                "\"$apiKey\""
+        )
     }
 
     buildTypes {
@@ -36,6 +44,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
