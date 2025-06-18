@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,7 +29,6 @@ import kotlinx.coroutines.delay
 import nahu.curso.infobrawl.R
 import nahu.curso.infobrawl.ui.screens.Screens
 
-
 @Composable
 fun SplashScreen(navController: NavHostController) {
     val scale = remember { Animatable(0f) }
@@ -38,33 +38,33 @@ fun SplashScreen(navController: NavHostController) {
             targetValue = 1f,
             animationSpec = tween(durationMillis = 3000, easing = FastOutSlowInEasing)
         )
-        navController.navigate(Screens.MainScreen.route){
-            popUpTo("Splash") {inclusive = true}
+        delay(1000)
+        navController.navigate(Screens.MainScreen.route) {
+            popUpTo(Screens.Splash.route) { inclusive = true }
         }
-        delay(100)
     }
 
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0D1B2A)), // Fondo azul oscuro
+            .background(Color(0xFF0D1B2A)),
         contentAlignment = Alignment.Center
     ) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
-                painter = painterResource(id = R.drawable.logo_brawl_stars),
+                painter = painterResource(id = R.drawable.info_brawl_portada),
                 contentDescription = "Logo Brawl",
                 modifier = Modifier
                     .scale(scale.value)
-                    .size(150.dp)
+                    .fillMaxSize()
             )
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(44.dp))
             Text(
                 text = "Cargando...",
                 color = Color.White,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 150.dp)
+
             )
-        }
     }
 }

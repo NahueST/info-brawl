@@ -8,4 +8,9 @@ interface IBrawlApi {
     suspend fun getPlayer(
         @Path("tag") tag: String
     ) : Player
+
+    @GET("players/{tag}/battlelog")
+    suspend fun getBattles(
+        @Path("tag") tag: String
+    ) : Battles
 }
