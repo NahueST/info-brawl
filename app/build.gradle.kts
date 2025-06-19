@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    //id("org.jetbrains.kotlin.kapt")  anotaciones de Glideid
+    id("com.google.gms.google-services")
 }
 
 val apiKey: String = gradleLocalProperties(rootDir, providers).getProperty("apiKey")
@@ -65,6 +67,14 @@ dependencies {
     implementation(libs.navigation.compose)
     implementation(libs.coil.compose)
     implementation(libs.gson)
+    implementation(libs.google.services)
+    implementation(libs.firebase.bom)
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+    implementation(libs.play.services.auth)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

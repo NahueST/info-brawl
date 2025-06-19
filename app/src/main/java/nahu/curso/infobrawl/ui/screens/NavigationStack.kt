@@ -4,19 +4,19 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
 import nahu.curso.infobrawl.ui.commons.BottomBar
 import nahu.curso.infobrawl.ui.commons.Destination
 import nahu.curso.infobrawl.ui.screens.historial.HistorialScreen
 import nahu.curso.infobrawl.ui.screens.main.PlayerStatsScreen
+import nahu.curso.infobrawl.ui.screens.sesion.InicioSesionScreen
 import nahu.curso.infobrawl.ui.splash.SplashScreen
 
 @Composable
-fun NavigationStack() {
-    val navController = rememberNavController()
+fun NavigationStack(onGoogleLoginClick: () -> Unit, navController: NavHostController,  ) {
     val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
 
     Scaffold(
@@ -28,7 +28,7 @@ fun NavigationStack() {
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = Screens.MainScreen.route,
+            startDestination = Screens.InicioSesion.route,
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screens.Splash.route) {
@@ -39,6 +39,13 @@ fun NavigationStack() {
             }
             composable(Screens.HistorialScreen.route) {
                 HistorialScreen(navController = navController)
+            }
+            composable(Screens.InicioSesion.route) {
+                InicioSesionScreen(
+                    onGoogleLoginClick = TODO(),
+                    navController = navController,
+                    vm = TODO()
+                )
             }
         }
     }

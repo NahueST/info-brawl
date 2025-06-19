@@ -3,7 +3,7 @@ package nahu.curso.infobrawl.data
 import nahu.curso.infobrawl.domain.IApiBrawlRepository
 
 class ApiBrawlRepository(                         //BrawlApiDataSource O BrawlTestDataSource
-    val brawlApiDataSource: IBrawlApiDataSource = BrawlApiDataSource()) : IApiBrawlRepository
+    val brawlApiDataSource: IBrawlApiDataSource = BrawlTestDataSource()) : IApiBrawlRepository
     {
     override suspend fun fetchPlayer(search: String): Player {
         return brawlApiDataSource.getPlayer(search)
